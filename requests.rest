@@ -1,0 +1,23 @@
+GET http://localhost:3000/9411644506
+Content-type: application/json
+
+
+
+###
+POST http://localhost:3000
+Content-type: application/json
+
+{"asdf":"asww"}
+
+
+###
+PUT http://localhost:3000/9411644506
+Content-type: application/json
+
+{"test":"true"}
+
+###
+DELETE http://localhost:3000/9411644506
+Content-type: application/json
+
+{"test":"true"}
