@@ -17,12 +17,8 @@ function getRandomInt() {
 }
 
 app.get('/:filename', (req, res) =>{
-  const readData = fs.readFileSync(`files${req.url}.txt`,{encoding:'utf8', flag:'r'});
-  res.send(readData);
-  res.setHeader('Content-Type', 'application/json')
-  res.write(req.body+'\n');
-  res.end(JSON.stringify(req.body, null, 2));
-  res.send('Got a GET request')
+  const readData = fs.readFileSync(`files${req.url}.txt`,{encoding:'utf8', flag:'r'})
+  res.status(200).json(readData)
 })
 
 app.post('/', (req, res) => {
@@ -41,7 +37,6 @@ app.post('/', (req, res) => {
   res.write(req.body+'\n');
   res.write(`The filename is: ${filename}`);
   res.end(JSON.stringify(req.body, null, 2));
-  res.send('Got a GET request')
 })
 
 app.put('/:filename', (req, res) => {
